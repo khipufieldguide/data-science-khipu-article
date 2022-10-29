@@ -6,7 +6,7 @@
     <img src="https://www.khipufieldguide.com/notebook/images/khipu_field_guide_logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">How Can Data Science Contribute to Understanding the Khipu Code?<br/><i>by Manuel Medrano and Ashok Khosla.</i></h3>
+  <h3 align="center">How Can Data Science Contribute to Understanding the Khipu Code?<br/><i>by Manuel Medrano and Ashok Khosla</i></h3>
 
   <p align="center">
     Support Documentation, Data, and Code
@@ -28,7 +28,7 @@
 </details>
 
 ## About This Repository:
-This repository contains companion data and source for the article How Can Data Science Contribute to Understanding the Khipu Code? by Manuel Medrano and Ashok Khosla. All of this companion information is presented in more detail and analysis on the companion website [www.khipufieldguide.com](https://www.khipufieldguide.com/notebook/index.html) .
+This repository contains companion data and source for the article ***How Can Data Science Contribute to Understanding the Khipu Code?*** by Manuel Medrano and Ashok Khosla. All of this companion information is presented in more detail and analysis on the companion website [www.khipufieldguide.com](https://www.khipufieldguide.com/notebook/index.html) .
 
 ## Prerequisites
 Data is stored in two formats, CSV (comma-separated values) and SQL. The CSV files can be read by Excel, R, Python or any spreadsheet aware software. These files can also be viewed at the [www.khipufieldguide.com](www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html). The SQL file is a SQL "pickle" created by the open-source MySQL package MariaDB.
@@ -45,7 +45,8 @@ The data folder contains:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Source
-Expository source code is provided for the following sections of the article. Each page is an HTML page, created using Jupyter, which shows both explanatory text, and code.
+Expository source code, excerpted from the Khipu Field Guide, is provided for the following sections of the article. Each page is an HTML page, created using Jupyter, which shows both explanatory text, and code.
+
 The following pages have been created, roughly in the order presented in the article:
 
   1. [Overall Khipu Database Metrics](./source/01_general_khipu_info.html)
@@ -62,8 +63,8 @@ The following pages have been created, roughly in the order presented in the art
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
-Ashok Khosla - [@your_twitter](https://twitter.com/amkhosla) - khipufieldguide@gmail.com<br/>
-Manuel Medrano - mmedrano@g.harvard.edu
+Manuel Medrano - mmedrano@g.harvard.edu<br/>
+Ashok Khosla - khipufieldguide@gmail.com
 
 ## Project Link:
 [https://www.khipufieldguide.com](https://www.khipufieldguide.com)
