@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How Can Data Science Contribute to Understanding the Khipu Code? - Khipu Field Guide Metrics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="./site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="./site_libs/clipboard/clipboard.min.js"></script>
+<script src="./site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="./site_libs/quarto-search/fuse.min.js"></script>
+<script src="./site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="./site_libs/quarto-html/quarto.js"></script>
+<script src="./site_libs/quarto-html/popper.min.js"></script>
+<script src="./site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="./site_libs/quarto-html/anchor.min.js"></script>
+<link href="./site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="./site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="./site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="./site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="./site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">2. Metrics:</a>
+  <ul class="collapse">
+  <li><a href="#number-of-khipus" id="toc-number-of-khipus" class="nav-link" data-scroll-target="#number-of-khipus">2.1 Number of Khipus</a></li>
+  <li><a href="#number-of-cords" id="toc-number-of-cords" class="nav-link" data-scroll-target="#number-of-cords">2.2 Number of Cords</a></li>
+  <li><a href="#number-of-knots" id="toc-number-of-knots" class="nav-link" data-scroll-target="#number-of-knots">2.3 Number of Knots</a></li>
+  <li><a href="#number-of-khipus-with-no-knots" id="toc-number-of-khipus-with-no-knots" class="nav-link" data-scroll-target="#number-of-khipus-with-no-knots">2.4 Number of Khipus with No Knots</a></li>
+  <li><a href="#zero-value-long-knots" id="toc-zero-value-long-knots" class="nav-link" data-scroll-target="#zero-value-long-knots">2.5 Zero Value Long Knots</a></li>
+  <li><a href="#untied-knots" id="toc-untied-knots" class="nav-link" data-scroll-target="#untied-knots">2.6 Untied Knots</a></li>
+  <li><a href="#khipus-with-broken-primary-cords" id="toc-khipus-with-broken-primary-cords" class="nav-link" data-scroll-target="#khipus-with-broken-primary-cords">2.7 Khipus with Broken Primary Cords</a></li>
+  <li><a href="#khipus-with-kaytes" id="toc-khipus-with-kaytes" class="nav-link" data-scroll-target="#khipus-with-kaytes">2.8 Khipus with Kaytes</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Khipu Field Guide Metrics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<link rel="stylesheet" type="text/css" href="https://www.khipufieldguide.com/css/tufte_fonts.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
+<hr>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>In this introductory page, companion expository text and code is provided to query the database for overall properties of the Khipu Field Guide (KFG) database, the number of khipus, the number of knots, the number of cords, etc. Not all possible metrics/queries are listed, only those necessary for the companion article <strong><em>“How Can Data Science Contribute to Understanding the Khipu Code?”</em></strong> <i>by Manuel Medrano and Ashok Khosla.</i>. More information is available at the <a href="https://www.khipufieldguide.com">Khipu Field Guide</a></p>
+</section>
+<section id="metrics" class="level2">
+<h2 class="anchored" data-anchor-id="metrics">2. Metrics:</h2>
+<section id="number-of-khipus" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-khipus">2.1 Number of Khipus</h3>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>(khipu_dict, all_khipus) <span class="op">=</span> kamayuq.fetch_khipus()</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">print</span>(<span class="ss">f"# of All Khipus is </span><span class="sc">{</span>ku<span class="sc">.</span>pct_kfg_khipus(<span class="bu">len</span>(all_khipus))<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># of All Khipus is 650 (100%)</code></pre>
+</div>
+</div>
+</section>
+<section id="number-of-cords" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-cords">2.2 Number of Cords</h3>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># This includes all cords, including top cords, and subsidiary cords, but not the primary cord.</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>total_num_cords <span class="op">=</span> <span class="bu">sum</span>([aKhipu.num_all_cords() <span class="cf">for</span> aKhipu <span class="kw">in</span> all_khipus])</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(<span class="ss">f"# of All Cords is </span><span class="sc">{</span>total_num_cords<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># of All Cords is 55720</code></pre>
+</div>
+</div>
+</section>
+<section id="number-of-knots" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-knots">2.3 Number of Knots</h3>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># This includes all knots on all cords except for the primary cord</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>total_num_knots <span class="op">=</span> <span class="bu">sum</span>([aKhipu.num_knots() <span class="cf">for</span> aKhipu <span class="kw">in</span> all_khipus])</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="bu">print</span>(<span class="ss">f"# of All Knots is </span><span class="sc">{</span>total_num_knots<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># of All Knots is 116246</code></pre>
+</div>
+</div>
+</section>
+<section id="number-of-khipus-with-no-knots" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-khipus-with-no-knots">2.4 Number of Khipus with No Knots</h3>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">## Zero Knot Khipus</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">def</span> satisfaction_condition(aCord):</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">return</span> aCord.knotted_value()<span class="op">==</span><span class="dv">0</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>zero_knot_khipus <span class="op">=</span> []</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="cf">for</span> aKhipu <span class="kw">in</span> all_khipus:</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="cf">if</span> <span class="bu">all</span>([satisfaction_condition(aCord) <span class="cf">for</span> aCord <span class="kw">in</span> aKhipu[:,:]]): <span class="co"># [:,:] means all pendant cords of all clusters</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>        zero_knot_khipus.append(aKhipu.name())</span>
+<span id="cb7-9"><a href="#cb7-9"></a>        </span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="bu">print</span>(<span class="ss">f"# of Khipus with No Knots is </span><span class="sc">{</span>ku<span class="sc">.</span>pct_kfg_khipus(<span class="bu">len</span>(zero_knot_khipus))<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a>khipu_rep <span class="op">=</span> ku.multiline(zero_knot_khipus, line_length<span class="op">=</span><span class="dv">120</span>, continuation_char<span class="op">=</span><span class="st">"</span><span class="ch">\n</span><span class="st"> "</span>)</span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="bu">print</span>(<span class="ss">f"Zero Knot Khipus =</span><span class="ch">\n</span><span class="sc">{</span>khipu_rep<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># of Khipus with No Knots is 14 (2%)
+Zero Knot Khipus =
+['AS025', 'HP025', 'HP026', 'HP028', 'UR070', 'UR071', 'UR082', 'UR103', 'UR158', 'UR179', 'UR185', 'UR216', 'HP048',
+ 'QU001']</code></pre>
+</div>
+</div>
+</section>
+<section id="zero-value-long-knots" class="level3">
+<h3 class="anchored" data-anchor-id="zero-value-long-knots">2.5 Zero Value Long Knots</h3>
+<p>Determining long knots with 0 values. (i.e an unknotted knot).</p>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>zero_long_knot_khipus <span class="op">=</span> {}</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="cf">for</span> aKhipu <span class="kw">in</span> all_khipus:</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    khipu_knots <span class="op">=</span> aKhipu.all_knots()</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    zero_long_knots <span class="op">=</span> [aKnot <span class="cf">for</span> aKnot <span class="kw">in</span> khipu_knots <span class="cf">if</span> (aKnot.type_code<span class="op">==</span><span class="st">'L'</span>) <span class="kw">and</span> (aKnot.knot_value_decimal <span class="op">==</span> <span class="dv">0</span>)]</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="cf">if</span> zero_long_knots: zero_long_knot_khipus[aKhipu.name()] <span class="op">=</span> <span class="bu">float</span>(<span class="bu">len</span>(zero_long_knots))<span class="op">/</span><span class="bu">float</span>(<span class="bu">len</span>(khipu_knots))</span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a>zero_long_knot_khipus <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">sorted</span>(zero_long_knot_khipus.items(), key<span class="op">=</span><span class="kw">lambda</span> x:x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb9-8"><a href="#cb9-8"></a>zero_long_knot_khipus</span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="co"># Explanatory function only... </span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># mean cord values are calculated only for pendant/attached cords (including top cords) to primary cord but not for subsidiary cords</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="im">import</span> statistics</span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="kw">def</span> mean_cord_value(aPrimaryCord):</span>
+<span id="cb9-14"><a href="#cb9-14"></a>    the_mean <span class="op">=</span> statistics.mean([aCord.knotted_value() <span class="cf">for</span> aCord <span class="kw">in</span> <span class="va">self</span>.attached_cords()]) <span class="cf">if</span> <span class="va">self</span>.num_attached_cords() <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>    <span class="cf">return</span> the_mean</span>
+<span id="cb9-16"><a href="#cb9-16"></a></span>
+<span id="cb9-17"><a href="#cb9-17"></a>mean_cord_values <span class="op">=</span> {khipu_dict[aKhipuName].mean_cord_value() <span class="cf">for</span> aKhipuName <span class="kw">in</span> zero_long_knot_khipus.keys()}</span>
+<span id="cb9-18"><a href="#cb9-18"></a>mean_cord_values        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>{'AS081': 0.46153846153846156,
+ 'UR1058': 0.047619047619047616,
+ 'AS078': 0.043478260869565216,
+ 'AS169': 0.03333333333333333,
+ 'AS074': 0.01818181818181818,
+ 'UR132': 0.017543859649122806,
+ 'UR1107': 0.010752688172043012,
+ 'JC005': 0.010183299389002037,
+ 'UR013': 0.009900990099009901,
+ 'AS075': 0.007874015748031496,
+ 'UR089': 0.007211538461538462,
+ 'UR204': 0.0070921985815602835,
+ 'UR1095': 0.004866180048661801,
+ 'UR053A': 0.0021645021645021645,
+ 'UR003': 0.0020325203252032522,
+ 'UR006': 0.001519756838905775,
+ 'AS069': 0.0009891196834817012}</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>{1, 2, 3, 4, 5, 7, 9, 10, 12, 21, 27, 29, 45, 85, 678}</code></pre>
+</div>
+</div>
+</section>
+<section id="untied-knots" class="level3">
+<h3 class="anchored" data-anchor-id="untied-knots">2.6 Untied Knots</h3>
+<p>Are there khipus with untied knots (ie. knots that had been tied and are now untied). To examine that hypothesis a search of the database SQL files for “untied”, “unknotted” and “desanudado” knot reveals:</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>untied_occurences <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="st">cord.csv:16:1000000,3000015,0.0000,0.0000,CN,U,3000006,0,U,1000005,1,1,2.000,32.000,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 06:44:23,2,nudo desanudado,S,,1,0,0</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="st">cord.csv:61:1000003,3000060,0.0000,0.0000,CN,K,1000003,0,V,1000027,5,7,0.000,38.000,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 09:56:27,1,(y un desanudado) -- cord includes evidence of a unknotting,S,,5,0,0</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="st">cord.csv:207:1000004,3000206,0.0000,0.0000,CN,U,1000004,0,R,1000059,9,115,0.000,33.500,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 15:01:12,1,nudo desanudado,S,,114,0,0</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="st">cord.csv:208:1000004,3000207,0.0000,0.0000,CN,K,1000004,0,V,1000060,1,116,0.000,40.000,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 15:01:43,1,nudo desanudado,S,,115,0,0</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="st">cord.csv:23537:1000292,3024405,0.0000,0.0000,CN,K,3023941,0,U,1007839,5,5,0.000,26.500,chandra,2011-12-23 09:44:41,chandra,2005-07-11 11:27:46,2,The knot on this khipu is partly untied.,S,,5,0,0</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="st">cord.csv:2768:1000022,3002912,0.0000,0.0000,CN,,1000022,0,V,1001020,1,135,0.000,0.000,katie,2011-11-23 19:42:40,gurton,2010-04-07 07:59:12,1,untied figure 8 knot?,S,PA,1,0,0</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="st">cord.csv:4383:1000023,3004539,0.0000,0.0000,CN,K,1000025,0,R,1001405,3,151,0.000,38.000,katie,2011-12-23 09:44:41,katie,2003-06-25 12:17:21,1,(knot untied),S,,145,0,0</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="st">cord.csv:54205:1000623,3056328,,0.0000,CN,K,1000623,,R,1019578,5,77,0.000,48.000,julia,2016-01-31 08:52:21,julia,2016-01-31 08:52:21,1,untied ,S,,,,</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="st">cord.csv:54221:1000623,3056344,,0.0000,CN,B,1000623,,R,1019580,3,93,0.000,41.500,julia,2016-01-31 08:52:21,julia,2016-01-31 08:52:21,1,untied ,S,,,,</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="st">cord.csv:5508:1000036,3005684,0.0000,0.0000,,K,1000036,0,U,1001792,3,5,0.000,36.500,katie,2011-12-23 09:44:41,katie,2003-06-30 09:48:07,1,Pendant 5 has a kink at 8.0 cm that appears to correspond to a 1s knot that was untied (not recent).,U,,5,0,0</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="st">cord.csv:5512:1000036,3005688,0.0000,0.0000,,K,1000036,0,U,1001793,1,9,0.000,37.500,katie,2011-12-23 09:44:41,katie,2003-06-30 09:50:01,1,Pendant 9 has a kink at 18.5 cm that appears to correspond to a 2L knot that was untied (not recent).,U,,9,0,0</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="st">cord.csv:5516:1000036,3005692,0.0000,0.0000,,K,1000036,0,U,1001793,5,13,0.000,28.500,katie,2011-12-23 09:44:41,katie,2003-06-30 09:52:07,1,Pendant 13 has a kink at 15.5 cm that appears to correspond to a 2L knot that was untied (not recent).,U,,13,0,0</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="st">cord.csv:5517:1000036,3005693,0.0000,0.0000,,K,1000036,0,U,1001793,6,14,0.000,24.500,katie,2011-12-23 09:44:41,katie,2003-06-30 09:52:41,1,Pendant 14 has a kink at 14.5 cm that appears to correspond to a 1E knot that was untied (not recent).,U,,14,0,0</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="st">cord.csv:5518:1000036,3005694,0.0000,0.0000,,K,1000036,0,U,1001794,1,15,0.000,25.500,katie,2011-12-23 09:44:41,katie,2003-06-30 09:53:21,1,Pendant 15 has a kink at 15.0 cm that appears to correspond to a 3L knot that was untied (not recent).,U,,15,0,0</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="st">cord.csv:23800:1000292,3024668,0.0000,0.0000,CN,K,3024057,0,U,1007927,3,3,1.000,38.500,chandra,2011-12-23 09:44:41,chandra,2005-07-22 11:28:19,2,This subsidiary may be unknotted.,S,,3,0,0</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="st">cord_level_1.csv:1717:1000022,3002912,0.0000,0.0000,CN,,1000022,0,V,1001020,1,135,0.000,0.000,1,untied figure 8 knot?,S,PA,1,1,katie,2011-11-23 19:42:40,gurton,2010-04-07 07:59:12</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a><span class="st">cord_level_1.csv:183:1000004,3000206,0.0000,0.0000,CN,U,1000004,0,R,1000059,9,115,0.000,33.500,1,nudo desanudado,S,,114,1,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 15:01:12</span></span>
+<span id="cb12-19"><a href="#cb12-19"></a><span class="st">cord_level_1.csv:184:1000004,3000207,0.0000,0.0000,CN,K,1000004,0,V,1000060,1,116,0.000,40.000,1,nudo desanudado,S,,115,1,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 15:01:43</span></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="st">cord_level_1.csv:2874:1000023,3004539,0.0000,0.0000,CN,K,1000025,0,R,1001405,3,151,0.000,38.000,1,(knot untied),S,,145,1,katie,2011-12-23 09:44:41,katie,2003-06-25 12:17:21</span></span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="st">cord_level_1.csv:37160:1000623,3056328,,0.0000,CN,K,1000623,,R,1019578,5,77,0.000,48.000,1,untied ,S,,,,julia,2016-01-31 08:52:21,julia,2016-01-31 08:52:21</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="st">cord_level_1.csv:37176:1000623,3056344,,0.0000,CN,B,1000623,,R,1019580,3,93,0.000,41.500,1,untied ,S,,,,julia,2016-01-31 08:52:21,julia,2016-01-31 08:52:21</span></span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="st">cord_level_1.csv:47:1000003,3000060,0.0000,0.0000,CN,K,1000003,0,V,1000027,5,7,0.000,38.000,1,(y un desanudado) -- cord includes evidence of a unknotting,S,,5,1,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 09:56:27</span></span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="st">cord_level_2.csv:3:1000000,3000015,0.0000,0.0000,CN,U,3000006,0,U,1000005,1,1,2.000,32.000,2,nudo desanudado,S,,1,1,1,6,cbrezine,2011-12-23 09:44:41,cbrezine,2003-05-29 06:44:23</span></span>
+<span id="cb12-25"><a href="#cb12-25"></a><span class="st">cord_level_2.csv:5189:1000292,3024405,0.0000,0.0000,CN,K,3023941,0,U,1007839,5,5,0.000,26.500,2,The knot on this khipu is partly untied.,S,,5,5,1,83,chandra,2011-12-23 09:44:41,chandra,2005-07-11 11:27:46</span></span>
+<span id="cb12-26"><a href="#cb12-26"></a><span class="st">khipu_notes.csv:527:1000247,cbrezine,2004-08-13 11:06:05,,0000-00-00 00:00:00,"There are no knots on this khipu, but at level 15 - 17 cm from primary cord there are indications on some strings that knots were untied. ","There are no knots on this khipu, but at level 15 - 17 cm from primary cord there are indications on some strings that knots were untied. "</span></span>
+<span id="cb12-27"><a href="#cb12-27"></a><span class="st">khipu_notes.csv:528:1000247,cbrezine,2004-08-13 11:22:35,,0000-00-00 00:00:00,There are notations on the original notes about the position of untied knots. ,There are notations on the original notes about the position of untied knots. </span></span>
+<span id="cb12-28"><a href="#cb12-28"></a><span class="st">khipu_notes.csv:86:1000036,katie,2003-06-30 09:38:25,,0000-00-00 00:00:00,"Construction note: Several cords (5, 9, 13-15) are kinked just at the place where a knot cluster is expected as if knots were present but had been untied.  Because the color and texture of the cords are unmarred, any unknotting would not have been recent.  The kinks are sufficiently clear to be able to ""reconstruct"" the number and type of knots.  In no case does an actual knot cluster appear on a kinked cord at the level of the kink.  The listing contains the actual knots only.  Both the ""reconstructed"" knots (marked with *) and the actual knots are shown below.  No values are inputed to them as we do not know whether to combine them or replace one with the other.",</span></span>
+<span id="cb12-29"><a href="#cb12-29"></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We then use the SQL tables searched (this time in a CSV form) to find the Khipu Names associated with those knots/cords</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">import</span> csv</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="kw">def</span> fetch_csv_line(filename, line_number):</span>
+<span id="cb13-4"><a href="#cb13-4"></a>    CSV_file <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>kq<span class="sc">.</span>project_directory()<span class="sc">}</span><span class="ss">/data/CSV/</span><span class="sc">{</span>filename<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>    lines <span class="op">=</span> []</span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="cf">with</span> <span class="bu">open</span>(CSV_file, mode <span class="op">=</span><span class="st">'r'</span>)<span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb13-7"><a href="#cb13-7"></a>        csvFile <span class="op">=</span> csv.reader(<span class="bu">file</span>)</span>
+<span id="cb13-8"><a href="#cb13-8"></a>        <span class="cf">try</span>:</span>
+<span id="cb13-9"><a href="#cb13-9"></a>            <span class="cf">for</span> line <span class="kw">in</span> csvFile:</span>
+<span id="cb13-10"><a href="#cb13-10"></a>               lines.append(line)</span>
+<span id="cb13-11"><a href="#cb13-11"></a>        <span class="cf">except</span>:</span>
+<span id="cb13-12"><a href="#cb13-12"></a>            <span class="cf">pass</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a>    </span>
+<span id="cb13-14"><a href="#cb13-14"></a>    <span class="cf">try</span>:</span>
+<span id="cb13-15"><a href="#cb13-15"></a>        theLine <span class="op">=</span> lines[line_number<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb13-16"><a href="#cb13-16"></a>    <span class="cf">except</span>:</span>
+<span id="cb13-17"><a href="#cb13-17"></a>        theLine <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb13-18"><a href="#cb13-18"></a>    <span class="cf">return</span> theLine</span>
+<span id="cb13-19"><a href="#cb13-19"></a></span>
+<span id="cb13-20"><a href="#cb13-20"></a>ids <span class="op">=</span> []</span>
+<span id="cb13-21"><a href="#cb13-21"></a><span class="cf">for</span> line <span class="kw">in</span> untied_occurences.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>):</span>
+<span id="cb13-22"><a href="#cb13-22"></a>    fields <span class="op">=</span> line.split(<span class="st">":"</span>)</span>
+<span id="cb13-23"><a href="#cb13-23"></a>    <span class="cf">if</span> <span class="bu">len</span>(fields)<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb13-24"><a href="#cb13-24"></a>        filename <span class="op">=</span> fields[<span class="dv">0</span>]</span>
+<span id="cb13-25"><a href="#cb13-25"></a>        linenum <span class="op">=</span> <span class="bu">int</span>(fields[<span class="dv">1</span>])</span>
+<span id="cb13-26"><a href="#cb13-26"></a>        csv_line <span class="op">=</span> fetch_csv_line(filename, linenum)</span>
+<span id="cb13-27"><a href="#cb13-27"></a>        <span class="cf">if</span> <span class="bu">len</span>(csv_line)<span class="op">&gt;</span><span class="dv">0</span>:</span>
+<span id="cb13-28"><a href="#cb13-28"></a>            ids.append(<span class="bu">int</span>(csv_line[<span class="dv">0</span>]))</span>
+<span id="cb13-29"><a href="#cb13-29"></a></span>
+<span id="cb13-30"><a href="#cb13-30"></a>khipu_ids <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">list</span>(<span class="bu">set</span>(ids)))</span>
+<span id="cb13-31"><a href="#cb13-31"></a>untied_khipus <span class="op">=</span> [kq.kfg_name_from_id(<span class="bu">int</span>(anId)) <span class="cf">for</span> anId <span class="kw">in</span> khipu_ids]</span>
+<span id="cb13-32"><a href="#cb13-32"></a>untied_khipus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>['UR019',
+ 'UR018',
+ 'UR010',
+ 'UR021',
+ 'UR001',
+ 'AS214',
+ 'UR070',
+ 'UR113',
+ 'UR278']</code></pre>
+</div>
+</div>
+</section>
+<section id="khipus-with-broken-primary-cords" class="level3">
+<h3 class="anchored" data-anchor-id="khipus-with-broken-primary-cords">2.7 Khipus with Broken Primary Cords</h3>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Explanatory function only... </span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">def</span> is_broken(aPrimaryCord):</span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="co">""" termination_code is 'B' """</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>    <span class="cf">return</span> (aPrimaryCord.beginning <span class="op">==</span> <span class="st">'B'</span>) <span class="kw">or</span> (aPrimaryCord.beginning <span class="op">==</span> <span class="st">'C'</span>) <span class="kw">or</span> (aPrimaryCord.termination <span class="op">==</span> <span class="st">'B'</span>) <span class="kw">or</span> (aPrimaryCord.termination <span class="op">==</span> <span class="st">'C'</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="co"># Locate all the khipus that have broken primary cords</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>broken_primary_khipus <span class="op">=</span> {aKhipu.name() <span class="cf">for</span> aKhipu <span class="kw">in</span> all_khipus <span class="cf">if</span> aKhipu.primary_cord.is_broken()}</span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="bu">print</span>(<span class="ss">f"# Khipus w/Broken Primaries= </span><span class="sc">{</span><span class="bu">len</span>(broken_primary_khipus)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># Khipus w/Broken Primaries= 156</code></pre>
+</div>
+</div>
+</section>
+<section id="khipus-with-kaytes" class="level3">
+<h3 class="anchored" data-anchor-id="khipus-with-kaytes">2.8 Khipus with Kaytes</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Explanatory function only...</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">def</span> has_kayte(aKhipu):</span>
+<span id="cb17-3"><a href="#cb17-3"></a>    <span class="co">""" A Kayte is the golf ball sized fuzzy ball at the beginning of the primary cord """</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>    <span class="cf">return</span> (aKhipu.primary_cord.beginning <span class="op">==</span> <span class="st">'NB'</span>) <span class="kw">or</span> (aKhipu.primary_cord.beginning <span class="op">==</span> <span class="st">'TL'</span>)</span>
+<span id="cb17-5"><a href="#cb17-5"></a>        </span>
+<span id="cb17-6"><a href="#cb17-6"></a>kayte_khipus <span class="op">=</span> {aKhipu.name() <span class="cf">for</span> aKhipu <span class="kw">in</span> all_khipus <span class="cf">if</span> aKhipu.has_kayte()}</span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="bu">print</span>(<span class="ss">f"kayte_khipus(</span><span class="sc">{</span><span class="bu">len</span>(kayte_khipus)<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>kayte_khipus<span class="op">=</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>kayte_khipus(16) = kayte_khipus={'UR175', 'UR231', 'UR268', 'UR091', 'UR087', 'UR291A', 'HP030', 'UR110', 'UR266', 'UR200', 'UR284', 'UR201', 'KH0081', 'UR188', 'UR235', 'UR068'}</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
