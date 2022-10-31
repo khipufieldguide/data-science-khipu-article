@@ -13,14 +13,13 @@ tr:nth-child(even) {
     background-color: #fAfAfA;
     }
 
-/* wide content css styles 
 #quarto-document-content {
-    width: 1480px;
+    width: 950px;
   }
 #quarto-margin-sidebar {
-  padding-left: 10px;
-  margin-right: -600px;
-  margin-left: 500px;
-}  
-
-*/  
+  padding-left: 40px;
+  margin-right: -500px;
+  margin-left: 100px;
+}
+/* wide content css styles
+*/
