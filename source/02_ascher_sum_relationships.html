@@ -2038,9 +2038,26 @@ if (outputEl) {{
 <span id="cb23-5"><a href="#cb23-5"></a>            (sum_matches, exact_match) <span class="op">=</span> <span class="va">self</span>.cord_cluster_half_sums_match(<span class="va">self</span>.cord_clusters[i], <span class="va">self</span>.cord_clusters[i<span class="op">+</span><span class="dv">1</span>])</span>
 <span id="cb23-6"><a href="#cb23-6"></a>            <span class="cf">if</span> sum_matches:</span>
 <span id="cb23-7"><a href="#cb23-7"></a>                <span class="cf">if</span> <span class="va">self</span>.cord_clusters[i].num_cords() <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb23-8"><a href="#cb23-8"></a>                    <span class="va">self</span>.cord_clusters[i].tag_double_sum_cluster(<span class="va">self</span>.cord_clusters[i], is_exact_sum<span class="op">=</span> exact_match)</span>
+<span id="cb23-8"><a href="#cb23-8"></a>                    <span class="va">self</span>.cord_clusters[i].tag_double_sum_cluster(<span class="va">self</span>.cord_clusters[i<span class="op">+</span><span class="dv">1</span>], is_exact_sum<span class="op">=</span> exact_match)</span>
 <span id="cb23-9"><a href="#cb23-9"></a>                <span class="cf">elif</span> <span class="va">self</span>.cord_clusters[i<span class="op">+</span><span class="dv">1</span>].num_cords() <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb23-10"><a href="#cb23-10"></a>                    <span class="va">self</span>.cord_clusters[i<span class="op">+</span><span class="dv">1</span>].tag_double_sum_cluster(<span class="va">self</span>.cord_clusters[i<span class="op">+</span><span class="dv">1</span>], is_exact_sum<span class="op">=</span> exact_match)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-10"><a href="#cb23-10"></a>                    <span class="va">self</span>.cord_clusters[i<span class="op">+</span><span class="dv">1</span>].tag_double_sum_cluster(<span class="va">self</span>.cord_clusters[i], is_exact_sum<span class="op">=</span> exact_match)</span>
+<span id="cb23-11"><a href="#cb23-11"></a></span>
+<span id="cb23-12"><a href="#cb23-12"></a></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="kw">def</span> cord_cluster_half_sums_match(<span class="va">self</span>, left_cluster, right_cluster):</span>
+<span id="cb23-14"><a href="#cb23-14"></a>    left_sum <span class="op">=</span> left_cluster.cluster_cord_sum() <span class="cf">if</span> left_cluster <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb23-15"><a href="#cb23-15"></a>    right_sum <span class="op">=</span> right_cluster.cluster_cord_sum() <span class="cf">if</span> right_cluster <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb23-16"><a href="#cb23-16"></a>    <span class="cf">if</span> left_sum <span class="op">&gt;</span> <span class="dv">0</span>: <span class="co"># A lot of uninformatively tagged 0 sum cord clusters. Much ado about nothing. </span></span>
+<span id="cb23-17"><a href="#cb23-17"></a>        <span class="co">#print(f"left_cluster @ {left_cluster.position()} : {left_sum} {right_sum}")</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a>        is_double_sum <span class="op">=</span> (left_sum <span class="op">==</span> <span class="bu">round</span>(right_sum<span class="op">/</span><span class="fl">2.0</span>)) <span class="kw">or</span> (<span class="bu">round</span>(left_sum<span class="op">/</span><span class="fl">2.0</span>) <span class="op">==</span> right_sum)</span>
+<span id="cb23-19"><a href="#cb23-19"></a>        <span class="co">#print(f"\t{is_double_sum}: round(left_sum/2.0) = {round(left_sum/2.0)} : round(right_sum/2.0) = {round(right_sum/2.0)}")</span></span>
+<span id="cb23-20"><a href="#cb23-20"></a>        <span class="cf">if</span> is_double_sum:</span>
+<span id="cb23-21"><a href="#cb23-21"></a>            <span class="cf">return</span> (<span class="va">True</span>, <span class="va">True</span>)</span>
+<span id="cb23-22"><a href="#cb23-22"></a>        <span class="cf">elif</span> <span class="bu">round</span>(left_sum<span class="op">/</span><span class="fl">2.0</span>) <span class="kw">in</span> <span class="va">self</span>.off_by_one(right_sum) <span class="kw">or</span> <span class="bu">round</span>(right_sum<span class="op">/</span><span class="fl">2.0</span>) <span class="kw">in</span> <span class="va">self</span>.off_by_one(left_sum):</span>
+<span id="cb23-23"><a href="#cb23-23"></a>            <span class="cf">return</span> (<span class="va">True</span>,<span class="va">False</span>)</span>
+<span id="cb23-24"><a href="#cb23-24"></a>        <span class="cf">else</span>:</span>
+<span id="cb23-25"><a href="#cb23-25"></a>            <span class="cf">return</span> (<span class="va">False</span>, <span class="va">False</span>)</span>
+<span id="cb23-26"><a href="#cb23-26"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-27"><a href="#cb23-27"></a>        <span class="cf">return</span> (<span class="va">False</span>, <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -70,6 +133,14 @@ ul.task-list{list-style: none;}
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#handedness-distribution" id="toc-handedness-distribution" class="nav-link" data-scroll-target="#handedness-distribution">1. Handedness Distribution</a>
+  <ul class="collapse">
+  <li><a href="#pendant-pendant-sum" id="toc-pendant-pendant-sum" class="nav-link" data-scroll-target="#pendant-pendant-sum">1.1 Pendant Pendant Sum</a></li>
+  <li><a href="#pendant-pendant-color-sum" id="toc-pendant-pendant-color-sum" class="nav-link" data-scroll-target="#pendant-pendant-color-sum">1.2 Pendant Pendant Color Sum</a></li>
+  <li><a href="#indexed-pendant-sum" id="toc-indexed-pendant-sum" class="nav-link" data-scroll-target="#indexed-pendant-sum">1.3 Indexed Pendant Sum</a></li>
+  <li><a href="#subsidiary-pendant-sum" id="toc-subsidiary-pendant-sum" class="nav-link" data-scroll-target="#subsidiary-pendant-sum">1.4 Subsidiary Pendant Sum</a></li>
+  </ul></li>
+  <li><a href="#khipus-with-leftright-ascher-sums-either-vs-both" id="toc-khipus-with-leftright-ascher-sums-either-vs-both" class="nav-link" data-scroll-target="#khipus-with-leftright-ascher-sums-either-vs-both">2. Khipus with Left/Right Ascher Sums (Either vs Both)</a></li>
   </ul>
 </nav>
     </div>
@@ -94,18 +165,120 @@ ul.task-list{list-style: none;}
 
 <link rel="stylesheet" type="text/css" href="https://www.khipufieldguide.com/css/tufte_fonts.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Code Pro">
 <hr>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<pre><code>"At the whole corpus level, we find an approximate 55/45 percentage split in right-handed versus left-handed sums for all four Ascher pendant sum relationships (table 1): 
-    pendant-pendant sums (54/46), pendant sums by color (56/44), pendant sums by index (57/43), and subsidiary pendant sums (57/43)"
-collect the code for these 4 numbers in one place. I believe these are: 
-    https://www.khipufieldmarks.com/analyses/pendant_pendant_sum_handedness.html#the-direction-of-sums, 
-    https://www.khipufieldmarks.com/analyses/pendant_pendants_color_sum.html#handedness, 
-    https://www.khipufieldmarks.com/analyses/indexed_pendant_sum.html#handedness, and 
-    https://www.khipufieldmarks.com/analyses/subsidiary_pendant_sum.html#handedness.
-
-"This is also not to imply that some 45% of khipus have been recorded backwards, since in most cases (63% across the four named relationships), any given specimen presents both left- and right-handed sums"
-code for https://www.khipufieldmarks.com/analyses/datascience_paper.html#khipus-with-leftright-ascher-sums---either-vs-both. </code></pre>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This page contains companion expository text and code for the article <strong><em>“How Can Data Science Contribute to Understanding the Khipu Code?”</em></strong> <i>by Manuel Medrano and Ashok Khosla.</i>. More information is available at the Khipu Fieldmarks <a href="https://www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html">Ascher Sums Relationship</a> page.</p>
+</section>
+<section id="handedness-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="handedness-distribution">1. Handedness Distribution</h2>
+<p>At the whole corpus level, we find an approximate 55/45 percentage split in right-handed versus left-handed sums for all four Ascher pendant sum relationships:</p>
+<ul>
+<li>pendant-pendant sums (54/46)</li>
+<li>pendant sums by color (56/44)</li>
+<li>pendant sums by index (57/43)</li>
+<li>subsidiary pendant sums (57/43)”</li>
+</ul>
+<section id="pendant-pendant-sum" class="level3">
+<h3 class="anchored" data-anchor-id="pendant-pendant-sum">1.1 Pendant Pendant Sum</h3>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>pps_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/pendant_pendant_sum_relation.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>num_left_handed <span class="op">=</span> <span class="bu">len</span>(pps_df[pps_df.handedness <span class="op">&lt;</span> <span class="dv">0</span>])</span>
+<span id="cb1-3"><a href="#cb1-3"></a>num_right_handed <span class="op">=</span> <span class="bu">len</span>(pps_df[pps_df.handedness <span class="op">&gt;=</span> <span class="dv">0</span>])</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">def</span> pct(x): <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">round</span>(x<span class="op">*</span><span class="fl">100.0</span><span class="op">/</span>(num_left_handed<span class="op">+</span>num_right_handed))<span class="sc">}</span><span class="ss">%"</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="ss">f"Pendant-Pendant Sums # Right-Handed/# Left-Handed: </span><span class="sc">{</span>pct(num_right_handed)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>pct(num_left_handed)<span class="sc">}</span><span class="ss"> [</span><span class="sc">{</span>num_right_handed<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_left_handed<span class="sc">}</span><span class="ss">]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pendant-Pendant Sums # Right-Handed/# Left-Handed: 54%/46% [4382/3706]</code></pre>
+</div>
+</div>
+</section>
+<section id="pendant-pendant-color-sum" class="level3">
+<h3 class="anchored" data-anchor-id="pendant-pendant-color-sum">1.2 Pendant Pendant Color Sum</h3>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>ppc_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/pendant_pendants_color_sum_relation.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>num_left_handed <span class="op">=</span> <span class="bu">len</span>(ppc_df[ppc_df.handedness <span class="op">&lt;</span> <span class="dv">0</span>])</span>
+<span id="cb3-3"><a href="#cb3-3"></a>num_right_handed <span class="op">=</span> <span class="bu">len</span>(ppc_df[ppc_df.handedness <span class="op">&gt;=</span> <span class="dv">0</span>])</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">def</span> pct(x): <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">round</span>(x<span class="op">*</span><span class="fl">100.0</span><span class="op">/</span>(num_left_handed<span class="op">+</span>num_right_handed))<span class="sc">}</span><span class="ss">%"</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">print</span>(<span class="ss">f"Pendant-Pendant Color Sums # Right-Handed/# Left-Handed: </span><span class="sc">{</span>pct(num_right_handed)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>pct(num_left_handed)<span class="sc">}</span><span class="ss"> [</span><span class="sc">{</span>num_right_handed<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_left_handed<span class="sc">}</span><span class="ss">]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pendant-Pendant Color Sums # Right-Handed/# Left-Handed: 56%/44% [1707/1316]</code></pre>
+</div>
+</div>
+</section>
+<section id="indexed-pendant-sum" class="level3">
+<h3 class="anchored" data-anchor-id="indexed-pendant-sum">1.3 Indexed Pendant Sum</h3>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>ips_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/indexed_pendant_sum_relation.csv"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>num_left_handed <span class="op">=</span> <span class="bu">len</span>(ips_df[ips_df.handedness <span class="op">&lt;</span> <span class="dv">0</span>])</span>
+<span id="cb5-3"><a href="#cb5-3"></a>num_right_handed <span class="op">=</span> <span class="bu">len</span>(ips_df[ips_df.handedness <span class="op">&gt;=</span> <span class="dv">0</span>])</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">def</span> pct(x): <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">round</span>(x<span class="op">*</span><span class="fl">100.0</span><span class="op">/</span>(num_left_handed<span class="op">+</span>num_right_handed))<span class="sc">}</span><span class="ss">%"</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="bu">print</span>(<span class="ss">f"Indexed-Pendant Sums # Right-Handed/# Left-Handed: </span><span class="sc">{</span>pct(num_right_handed)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>pct(num_left_handed)<span class="sc">}</span><span class="ss"> [</span><span class="sc">{</span>num_right_handed<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_left_handed<span class="sc">}</span><span class="ss">]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Indexed-Pendant Sums # Right-Handed/# Left-Handed: 57%/43% [2712/2034]</code></pre>
+</div>
+</div>
+</section>
+<section id="subsidiary-pendant-sum" class="level3">
+<h3 class="anchored" data-anchor-id="subsidiary-pendant-sum">1.4 Subsidiary Pendant Sum</h3>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>sps_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/subsidiary_pendant_sum_relation.csv"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>num_left_handed <span class="op">=</span> <span class="bu">len</span>(sps_df[sps_df.handedness <span class="op">&lt;</span> <span class="dv">0</span>])</span>
+<span id="cb7-3"><a href="#cb7-3"></a>num_right_handed <span class="op">=</span> <span class="bu">len</span>(sps_df[sps_df.handedness <span class="op">&gt;=</span> <span class="dv">0</span>])</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">def</span> pct(x): <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">round</span>(x<span class="op">*</span><span class="fl">100.0</span><span class="op">/</span>(num_left_handed<span class="op">+</span>num_right_handed))<span class="sc">}</span><span class="ss">%"</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="bu">print</span>(<span class="ss">f"Subsidiary-Pendant Color Sums # Right-Handed/# Left-Handed: </span><span class="sc">{</span>pct(num_right_handed)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>pct(num_left_handed)<span class="sc">}</span><span class="ss"> [</span><span class="sc">{</span>num_right_handed<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_left_handed<span class="sc">}</span><span class="ss">]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Subsidiary-Pendant Color Sums # Right-Handed/# Left-Handed: 57%/43% [439/328]</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="khipus-with-leftright-ascher-sums-either-vs-both" class="level2">
+<h2 class="anchored" data-anchor-id="khipus-with-leftright-ascher-sums-either-vs-both">2. Khipus with Left/Right Ascher Sums (Either vs Both)</h2>
+<p>In most cases (63% across the four named relationships), any given specimen presents both left- and right-handed sums</p>
+<div class="cell" data-execution_count="13">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> show_either_both_sums(df, df_name):</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    has_either_mask <span class="op">=</span> [(a <span class="op">&gt;</span> <span class="dv">0</span>) <span class="kw">or</span> (b <span class="op">&gt;</span> <span class="dv">0</span>) <span class="cf">for</span> (a,b) <span class="kw">in</span> <span class="bu">zip</span>(df[<span class="st">'num_left_sums'</span>].values.tolist(), df[<span class="st">'num_right_sums'</span>].values.tolist())]</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    has_either_sum_df <span class="op">=</span> df[has_either_mask]</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    has_both_mask <span class="op">=</span> [(a <span class="op">&gt;</span> <span class="dv">0</span>) <span class="kw">and</span> (b <span class="op">&gt;</span> <span class="dv">0</span>) <span class="cf">for</span> (a,b) <span class="kw">in</span> <span class="bu">zip</span>(df[<span class="st">'num_left_sums'</span>].values.tolist(), df[<span class="st">'num_right_sums'</span>].values.tolist())]</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    has_both_sum_df <span class="op">=</span> df[has_both_mask]</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>df_name<span class="sc">}</span><span class="ss"> num either_sums = </span><span class="sc">{</span><span class="bu">len</span>(has_either_sum_df)<span class="sc">}</span><span class="ss"> num_both_sums = </span><span class="sc">{</span><span class="bu">len</span>(has_both_sum_df)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="cf">return</span> (<span class="bu">len</span>(has_either_sum_df), <span class="bu">len</span>(has_both_sum_df))</span>
+<span id="cb9-8"><a href="#cb9-8"></a></span>
+<span id="cb9-9"><a href="#cb9-9"></a>pps_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/pendant_pendant_sum.csv"</span>)</span>
+<span id="cb9-10"><a href="#cb9-10"></a>ppc_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/pendant_pendants_color_sum.csv"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11"></a>ips_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/indexed_pendant_sum.csv"</span>)</span>
+<span id="cb9-12"><a href="#cb9-12"></a>sps_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/ascher_sum_relations/subsidiary_pendant_sum.csv"</span>)</span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a>either_pps, both_pps <span class="op">=</span> show_either_both_sums(pps_df, <span class="st">"pps_df"</span>)</span>
+<span id="cb9-15"><a href="#cb9-15"></a>either_pps_color, both_pps_color <span class="op">=</span> show_either_both_sums(ppc_df, <span class="st">"ppc_df"</span>)</span>
+<span id="cb9-16"><a href="#cb9-16"></a>either_indexed_pps, both_indexed_pps <span class="op">=</span> show_either_both_sums(ips_df, <span class="st">"ips_df"</span>)</span>
+<span id="cb9-17"><a href="#cb9-17"></a>either_sub_pps, both_sub_pps <span class="op">=</span> show_either_both_sums(sps_df, <span class="st">"sps_df"</span>)</span>
+<span id="cb9-18"><a href="#cb9-18"></a></span>
+<span id="cb9-19"><a href="#cb9-19"></a>sum_eithers <span class="op">=</span> either_pps <span class="op">+</span> either_pps_color <span class="op">+</span> either_indexed_pps <span class="op">+</span> either_sub_pps</span>
+<span id="cb9-20"><a href="#cb9-20"></a>sum_both <span class="op">=</span> both_pps <span class="op">+</span> both_pps_color <span class="op">+</span> both_indexed_pps <span class="op">+</span> both_sub_pps</span>
+<span id="cb9-21"><a href="#cb9-21"></a><span class="bu">print</span>(<span class="ss">f"sum_eithers = </span><span class="sc">{</span>sum_eithers<span class="sc">}</span><span class="ss"> sum_both = </span><span class="sc">{</span>sum_both<span class="sc">}</span><span class="ss"> ratio=</span><span class="sc">{</span><span class="bu">round</span>(<span class="fl">100.0</span><span class="op">*</span><span class="bu">float</span>(sum_both)<span class="op">/</span><span class="bu">float</span>(sum_eithers))<span class="sc">}</span><span class="ss">%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>pps_df num either_sums = 427 num_both_sums = 325
+ppc_df num either_sums = 261 num_both_sums = 146
+ips_df num either_sums = 228 num_both_sums = 118
+sps_df num either_sums = 117 num_both_sums = 59
+sum_eithers = 1033 sum_both = 648 ratio=63%</code></pre>
+</div>
+</div>
 
 
 </section>
