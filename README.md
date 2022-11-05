@@ -31,7 +31,7 @@
 This repository contains companion data and code for the article ***How Can Data Science Contribute to Understanding the Khipu Code?*** by Manuel Medrano and Ashok Khosla (under review). All of this companion information is presented in more detail and with additional analyses on Khosla's companion website [www.khipufieldguide.com](https://www.khipufieldguide.com/notebook/index.html).
 
 ## Prerequisites
-Data are stored in two formats, CSV (comma-separated values) and SQL. The CSV files can be read by Excel, R, Python or any spreadsheet aware software. These files can also be viewed at the [www.khipufieldguide.com](www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html). The SQL file is a SQL "pickle" created by the open-source MySQL package MariaDB.
+Data are stored in two formats, CSV (comma-separated values) and SQL. The CSV files can be read by Excel, R, Python or any spreadsheet aware software. These files can also be viewed at [www.khipufieldguide.com](www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html). The SQL file is a SQL "pickle" created by the open-source MySQL package MariaDB.
 
 ## Data
 The data folder contains:
@@ -45,7 +45,7 @@ The data folder contains:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Source
-Expository source code, excerpted from the Khipu Field Guide, is provided for the following sections of the article. Each page is an HTML page, created using Jupyter, which shows both explanatory text, and code.
+Expository source code, excerpted from Khosla's Khipu Field Guide, is provided for the following sections of the article. Each page is an HTML page, created using Jupyter, which shows both explanatory text, and code.
 
 The following pages have been created, roughly in the order presented in the article:
 
