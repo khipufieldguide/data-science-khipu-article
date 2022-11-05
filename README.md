@@ -2,9 +2,6 @@
 
 <br />
 <div align="center">
-  <a href="https://www.khipufieldguide.com/">
-    <img src="https://www.khipufieldguide.com/notebook/images/khipu_field_guide_logo.jpg" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">How Can Data Science Contribute to Understanding the Khipu Code?<br/><i>by Manuel Medrano and Ashok Khosla</i></h3>
 
