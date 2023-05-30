@@ -2,15 +2,15 @@
 
 <br />
 <div align="center">
-  <a href="https://www.khipufieldguide.com/">
-    <img src="https://www.khipufieldguide.com/notebook/images/khipu_field_guide_logo.jpg" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">How Can Data Science Contribute to Understanding the Khipu Code?<br/><i>by Manuel Medrano and Ashok Khosla</i></h3>
 
   <p align="center">
     Support Documentation, Data, and Code
   </p>
+  
+  <a href="https://doi.org/10.5281/zenodo.7295108"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7295108.svg" alt="DOI"></a>
+  
 </div>
 
 [![][fieldguide_image]](https://www.khipufieldguide.com)
@@ -28,10 +28,10 @@
 </details>
 
 ## About This Repository:
-This repository contains companion data and source for the article ***How Can Data Science Contribute to Understanding the Khipu Code?*** by Manuel Medrano and Ashok Khosla. All of this companion information is presented in more detail and analysis on the companion website [www.khipufieldguide.com](https://www.khipufieldguide.com/notebook/index.html) .
+This repository contains companion data and code for the article ***How Can Data Science Contribute to Understanding the Khipu Code?*** by Manuel Medrano and Ashok Khosla (under review). All of this companion information is presented in more detail and with additional analyses on Khosla's companion website [www.khipufieldguide.com](https://www.khipufieldguide.com/notebook/index.html).
 
 ## Prerequisites
-Data is stored in two formats, CSV (comma-separated values) and SQL. The CSV files can be read by Excel, R, Python or any spreadsheet aware software. These files can also be viewed at the [www.khipufieldguide.com](www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html). The SQL file is a SQL "pickle" created by the open-source MySQL package MariaDB.
+Data are stored in two formats, CSV (comma-separated values) and SQL. The CSV files can be read by Excel, R, Python or any spreadsheet aware software. These files can also be viewed at [www.khipufieldguide.com](www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html). The SQL file is a SQL "pickle" created by the open-source MySQL package MariaDB.
 
 ## Data
 The data folder contains:
@@ -39,13 +39,13 @@ The data folder contains:
 * A [SQL *dump*](./data/KFG_DB.SQL) of the 650 khipus used in the Khipu Field Guide (KFG) to construct the article. More information on the creation of the KFG database can be viewed at the [KFG Codebook](https://www.khipufieldguide.com/databook/Database_Build.html)
 * A [khipu summary](./data/khipu_summary.csv) CSV file, containing summary information about every khipu in the KFG.
 * A folder containing Ascher summation relations for all the Ascher summation relations in the 650 khipu, as well as a [summary file](./data/ascher_sum/relations/ascher_sum_relationships.csv).
-  These files generally come in pairs (mostly, but not always) - a summary file, showing the number of sums/relations for each khipu, and a more detailed relations file, containing each summation and it's location and other useful information.
+  These files generally come in pairs (mostly, but not always) - a summary file, showing the number of sums/relations for each khipu, and a more detailed relations file, containing each summation and its location and other useful information.
   More detailed viewing and analyses of these relationships is available at https://www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Source
-Expository source code, excerpted from the Khipu Field Guide, is provided for the following sections of the article. Each page is an HTML page, created using Jupyter, which shows both explanatory text, and code.
+Expository source code, excerpted from Khosla's Khipu Field Guide, is provided for the following sections of the article. Each page is an HTML page, created using Jupyter, which shows both explanatory text, and code.
 
 The following pages have been created, roughly in the order presented in the article:
 
