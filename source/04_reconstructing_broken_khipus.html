@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="broken-primary-cords" class="level2">
 <h2 class="anchored" data-anchor-id="broken-primary-cords">1. Broken Primary Cords</h2>
 <p>Using the primary cord termination code of “broken” as a proxy for fragmentary khipus, a search of the dataset reveals 156 (24%) afflicted specimens</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> is_broken(aPrimaryCord):</span>
@@ -197,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="number-of-ascher-summations-for-kho468-ur231" class="level3">
 <h3 class="anchored" data-anchor-id="number-of-ascher-summations-for-kho468-ur231">2.1 Number of Ascher Summations for KHO468 (UR231)</h3>
 <p>Are UR231A and UR231B two fragments of the same khipu <a href="https://www.khipufieldguide.com/sketchbook/khipu/UR231_wide.html">KH0468/UR231</a>? We can splice UR231A and UR231B together after cluster 39, where the break occurs. An exhaustive search of the Ascher sum’s reveals a wealth of internal pendant-pendant sums arising from the proposed combination of fragments A and B into a single khipu:</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> fieldmark_ascher_pendant_pendant_sum <span class="im">import</span> Fieldmark_Pendant_Pendant_Sum</span>
@@ -209,74 +209,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-7"><a href="#cb3-7"></a>indexed_pendant_sums_df <span class="op">=</span> Fieldmark_Indexed_Pendant_Sum().dataframes[<span class="dv">1</span>].dataframe</span>
 <span id="cb3-8"><a href="#cb3-8"></a></span>
 <span id="cb3-9"><a href="#cb3-9"></a><span class="kw">def</span> num_relations(aKhipuName, relations_df):</span>
-<span id="cb3-10"><a href="#cb3-10"></a>    khipu_relations_df <span class="op">=</span> relations_df[relations_df.name <span class="op">==</span> aKhipuName]</span>
-<span id="cb3-12"><a href="#cb3-12"></a>    <span class="cf">return</span> <span class="bu">len</span>(khipu_relations_df)</span>
-<span id="cb3-13"><a href="#cb3-13"></a></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="kw">def</span> num_crossed_relations(aKhipuName, relations_df, left_khipu_num_clusters<span class="op">=</span><span class="dv">39</span>):</span>
-<span id="cb3-15"><a href="#cb3-15"></a>    num_crossings <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a>    khipu_df <span class="op">=</span> relations_df[relations_df.name <span class="op">==</span> aKhipuName]</span>
-<span id="cb3-18"><a href="#cb3-18"></a>    relation_reps <span class="op">=</span> []</span>
-<span id="cb3-19"><a href="#cb3-19"></a>    </span>
-<span id="cb3-20"><a href="#cb3-20"></a>    <span class="cf">for</span> index, row <span class="kw">in</span> khipu_df.iterrows():</span>
-<span id="cb3-21"><a href="#cb3-21"></a>        sum_cluster_index <span class="op">=</span> ku.cluster_index_from_cord_rep(row[<span class="st">'cord_position'</span>])</span>
-<span id="cb3-22"><a href="#cb3-22"></a>        summand_cluster_indices <span class="op">=</span> [ku.cluster_index_from_cord_rep(cord_rep) <span class="cf">for</span> cord_rep <span class="kw">in</span> row[<span class="st">'sum_string'</span>].split(<span class="st">'+'</span>)]</span>
-<span id="cb3-23"><a href="#cb3-23"></a>        (left_summand_cluster_index, right_summand_cluster_index) <span class="op">=</span> (<span class="bu">min</span>(summand_cluster_indices), <span class="bu">max</span>(summand_cluster_indices))</span>
-<span id="cb3-24"><a href="#cb3-24"></a>        is_right_handed <span class="op">=</span> ((sum_cluster_index <span class="op">&lt;</span> left_khipu_num_clusters) <span class="kw">and</span> (right_summand_cluster_index <span class="op">&gt;=</span> left_khipu_num_clusters)) <span class="co">#0 based index not 1 based</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a>        is_left_handed <span class="op">=</span> ((sum_cluster_index <span class="op">&gt;=</span> left_khipu_num_clusters) <span class="kw">and</span> (left_summand_cluster_index <span class="op">&lt;</span> left_khipu_num_clusters)) <span class="co">#0 based index not 1 based</span></span>
-<span id="cb3-26"><a href="#cb3-26"></a>        </span>
-<span id="cb3-27"><a href="#cb3-27"></a>        <span class="cf">if</span> (is_left_handed <span class="kw">or</span> is_right_handed): </span>
-<span id="cb3-28"><a href="#cb3-28"></a>            sum_string <span class="op">=</span> <span class="ss">f"</span><span class="ch">\t</span><span class="ss">Sum Cord [</span><span class="sc">{</span>row[<span class="st">'cord_name'</span>]<span class="sc">}</span><span class="ss">]: </span><span class="sc">{</span>row[<span class="st">'cord_position'</span>]<span class="sc">}</span><span class="ss"> SummandString: </span><span class="sc">{</span>row[<span class="st">'sum_string'</span>]<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb3-29"><a href="#cb3-29"></a>            <span class="cf">if</span> sum_string <span class="kw">not</span> <span class="kw">in</span> relation_reps:</span>
-<span id="cb3-30"><a href="#cb3-30"></a>                relation_reps.append(sum_string)</span>
-<span id="cb3-31"><a href="#cb3-31"></a>                num_crossings <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb3-32"><a href="#cb3-32"></a>    <span class="cf">return</span> (num_crossings, <span class="bu">sorted</span>(<span class="bu">set</span>(relation_reps)))</span>
-<span id="cb3-33"><a href="#cb3-33"></a></span>
-<span id="cb3-34"><a href="#cb3-34"></a><span class="cf">for</span> khipu_name <span class="kw">in</span> [<span class="st">'XX231L_XX231R'</span>]:</span>
-<span id="cb3-35"><a href="#cb3-35"></a>    num_pps <span class="op">=</span> num_relations(khipu_name, pendant_pendant_sums_df)</span>
-<span id="cb3-36"><a href="#cb3-36"></a>    num_ppscolor <span class="op">=</span> num_relations(khipu_name, pendant_pendant_color_sums_df)</span>
-<span id="cb3-37"><a href="#cb3-37"></a>    num_ipps <span class="op">=</span> num_relations(khipu_name, indexed_pendant_sums_df)</span>
-<span id="cb3-38"><a href="#cb3-38"></a>    <span class="bu">print</span>(<span class="ss">f"| </span><span class="sc">{</span>khipu_name<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>num_pps<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>num_ppscolor<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>num_ipps<span class="sc">}</span><span class="ss"> |"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-10"><a href="#cb3-10"></a>    <span class="cf">return</span> <span class="bu">len</span>(relations_df[relations_df.name <span class="op">==</span> aKhipuName])</span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="kw">def</span> num_crossed_relations(aKhipuName, relations_df, left_khipu_num_clusters<span class="op">=</span><span class="dv">39</span>):</span>
+<span id="cb3-13"><a href="#cb3-13"></a>    num_crossings <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>    khipu_df <span class="op">=</span> relations_df[relations_df.name <span class="op">==</span> aKhipuName]</span>
+<span id="cb3-15"><a href="#cb3-15"></a>    relation_reps <span class="op">=</span> []</span>
+<span id="cb3-16"><a href="#cb3-16"></a>    </span>
+<span id="cb3-17"><a href="#cb3-17"></a>    <span class="cf">for</span> index, row <span class="kw">in</span> khipu_df.iterrows():</span>
+<span id="cb3-18"><a href="#cb3-18"></a>        sum_cluster_index <span class="op">=</span> ku.cluster_index_from_cord_rep(row[<span class="st">'cord_position'</span>])</span>
+<span id="cb3-19"><a href="#cb3-19"></a>        summand_cluster_indices <span class="op">=</span> [ku.cluster_index_from_cord_rep(cord_rep) <span class="cf">for</span> cord_rep <span class="kw">in</span> row[<span class="st">'sum_string'</span>].split(<span class="st">'+'</span>)]</span>
+<span id="cb3-20"><a href="#cb3-20"></a>        (left_summand_cluster_index, right_summand_cluster_index) <span class="op">=</span> (<span class="bu">min</span>(summand_cluster_indices), <span class="bu">max</span>(summand_cluster_indices))</span>
+<span id="cb3-21"><a href="#cb3-21"></a>        is_right_handed <span class="op">=</span> ((sum_cluster_index <span class="op">&lt;</span> left_khipu_num_clusters) <span class="kw">and</span> (right_summand_cluster_index <span class="op">&gt;=</span> left_khipu_num_clusters)) <span class="co">#0 based index not 1 based</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a>        is_left_handed <span class="op">=</span> ((sum_cluster_index <span class="op">&gt;=</span> left_khipu_num_clusters) <span class="kw">and</span> (left_summand_cluster_index <span class="op">&lt;</span> left_khipu_num_clusters)) <span class="co">#0 based index not 1 based</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a>        </span>
+<span id="cb3-24"><a href="#cb3-24"></a>        <span class="cf">if</span> (is_left_handed <span class="kw">or</span> is_right_handed): </span>
+<span id="cb3-25"><a href="#cb3-25"></a>            sum_string <span class="op">=</span> <span class="ss">f"</span><span class="ch">\t</span><span class="ss">Sum Cord [</span><span class="sc">{</span>row[<span class="st">'cord_name'</span>]<span class="sc">}</span><span class="ss">]: </span><span class="sc">{</span>row[<span class="st">'cord_position'</span>]<span class="sc">}</span><span class="ss"> SummandString: </span><span class="sc">{</span>row[<span class="st">'sum_string'</span>]<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>            <span class="cf">if</span> sum_string <span class="kw">not</span> <span class="kw">in</span> relation_reps:</span>
+<span id="cb3-27"><a href="#cb3-27"></a>                relation_reps.append(sum_string)</span>
+<span id="cb3-28"><a href="#cb3-28"></a>                num_crossings <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a>    <span class="cf">return</span> (num_crossings, <span class="bu">sorted</span>(<span class="bu">set</span>(relation_reps)))</span>
+<span id="cb3-30"><a href="#cb3-30"></a></span>
+<span id="cb3-31"><a href="#cb3-31"></a><span class="cf">for</span> khipu_name <span class="kw">in</span> [<span class="st">'XX231L_XX231R'</span>]:</span>
+<span id="cb3-32"><a href="#cb3-32"></a>    num_pps <span class="op">=</span> num_relations(khipu_name, pendant_pendant_sums_df)</span>
+<span id="cb3-33"><a href="#cb3-33"></a>    num_ppscolor <span class="op">=</span> num_relations(khipu_name, pendant_pendant_color_sums_df)</span>
+<span id="cb3-34"><a href="#cb3-34"></a>    num_ipps <span class="op">=</span> num_relations(khipu_name, indexed_pendant_sums_df)</span>
+<span id="cb3-35"><a href="#cb3-35"></a>    <span class="bu">print</span>(<span class="ss">f"| </span><span class="sc">{</span>khipu_name<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>num_pps<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>num_ppscolor<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>num_ipps<span class="sc">}</span><span class="ss"> |"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>| XX231L_XX231R | 186 | 13 | 12 |</code></pre>
 </div>
 </div>
-<table class="table">
-<caption># Ascher Sums</caption>
-<colgroup>
-<col style="width: 22%">
-<col style="width: 26%">
-<col style="width: 26%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Khipu<br>&nbsp;</th>
-<th style="text-align: right;"># Pendant Pendant Sums<br>&nbsp;</th>
-<th style="text-align: right;"># Pendant Pendant Sums<br> by Color</th>
-<th style="text-align: right;"># Pendant Pendant Sums<br> by Index</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;"><span style="font-size:.7rem;">To see symbolic image,<br> click on Name</span><br><br>&nbsp;</td>
-<td style="text-align: right;"><span style="font-size:.7rem;">To see Ascher Summation Diagram,<br> click on Number</span><br><br>#Total (Left)/(Right)</td>
-<td style="text-align: right;"><span style="font-size:.7rem;">To see Ascher Summation Diagram,<br> click on Number</span><br><br>#Total (Left)/(Right)</td>
-<td style="text-align: right;"><span style="font-size:.7rem;">To see Ascher Summation Diagram,<br> click on Number</span><br><br>#Total (Left)/(Right)</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;"><a href="./images/XX231L_XX231R.jpg">XX231L_XX231R</a></td>
-<td style="text-align: right;">186 <a href="./images/XX231L_XX231R_ppsL.jpg">(89)</a>/<a href="./images/XX231L_XX231R_ppsR.jpg">(97)</a></td>
-<td style="text-align: right;">13 <a href="./images/XX231L_XX231R_ppscL.jpg">(5)</a>/<a href="./images/XX231L_XX231R_ppscR.jpg">(6)</a></td>
-<td style="text-align: right;">12 <a href="./images/XX231L_XX231R_ippsL.jpg">(5)</a>/<a href="./images/XX231L_XX231R_ippsR.jpg">(7)</a></td>
-</tr>
-</tbody>
-</table>
+<p><a href="./images/XX231L_XX231R.jpg">XX231L_XX231R</a> - To see Ascher Summation Diagram, click on Number</p>
+<ul>
+<li>Count of Pendant Pendant Sums - 186 <a href="./images/XX231L_XX231R_ppsL.jpg">(89 left)</a>/<a href="./images/XX231L_XX231R_ppsR.jpg">(97 right)</a></li>
+<li>Count of Pendant Pendant Sums by Color - 13 <a href="./images/XX231L_XX231R_ppscL.jpg">(5 left)</a>/<a href="./images/XX231L_XX231R_ppscR.jpg">(6 right)</a><br>
+</li>
+<li>Count of Pendant Pendant Sums by Index - 12 <a href="./images/XX231L_XX231R_ippsL.jpg">(5 left)</a>/<a href="./images/XX231L_XX231R_ippsR.jpg">(7 right)</a></li>
+</ul>
 </section>
 <section id="ascher-summations-which-cross-the-splice-boundary" class="level3">
 <h3 class="anchored" data-anchor-id="ascher-summations-which-cross-the-splice-boundary">2.2 Ascher Summations which CROSS the Splice Boundary</h3>
 <p>How many of these summation relations for the joined XX231L_XX231R <strong>cross</strong> the splice boundary, indicating the two halves are joined correctly?</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> khipu_name <span class="kw">in</span> [<span class="st">'XX231L_XX231R'</span>]:</span>
@@ -319,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="finding-khipus-similar-to-ur231a" class="level3">
 <h3 class="anchored" data-anchor-id="finding-khipus-similar-to-ur231a">3.1. Finding Khipus Similar to UR231A</h3>
 <p>First let’s find khipus whose primary cord is similar to UR231A. What is UR231A’s primary cord?</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>(khipu_dict, all_khipus) <span class="op">=</span> kamayuq.fetch_khipus()</span>
@@ -329,12 +304,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-5"><a href="#cb7-5"></a>primary_cord_colors <span class="op">=</span> [color.full_color <span class="cf">for</span> color <span class="kw">in</span> main_cord.ascher_cord_colors]</span>
 <span id="cb7-6"><a href="#cb7-6"></a>primary_cord_colors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>['W:AB:KB']</code></pre>
 </div>
 </div>
 <p>Previous investigations have shown that <strong>cord-color searching by exact color is very unreliable</strong>. So let’s search for primary cords, that are mottled, and have three colors. Let’s list possible candidates:</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>primary_cord_3mottleds <span class="op">=</span> []</span>
@@ -372,7 +347,7 @@ QU006: ['YB:BB:PB'], QU009: ['YB:BB:PB'],
 <li>It has a mean cord value of 27</li>
 </ul>
 <p>Accordingly, let’s start the search with khipus that have some of these characteristics in common. So let’s search for khipus that are banded, with only verso knots, in a Z direction.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Read in the Mean Cord Value Fieldmark and its associated dataframe and match dictionary</span></span>
@@ -394,15 +369,15 @@ QU006: ['YB:BB:PB'], QU009: ['YB:BB:PB'],
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>42 khipus have z_knots, only verso_attachments, with color_bands
-{'UR059', 'UR091', 'UR262', 'UR056A', 'UR240', 'XX231L_UR089', 'UR252', 'UR243', 
- 'UR116A', 'UR213', 'UR271', 'UR272', 'UR228', 'HP051 A', 'UR134', 'UR238', 
- 'XX231L_UR246', 'UR222', 'UR235', 'UR022', 'HP021', 'HP029', 'UR201', 'HP015', 
- 'XX231L_UR088', 'UR056B', 'UR221', 'HP009', 'UR089', 'KH0001', 'XX231L_XX231R', 
- 'XX231L_UR022', 'UR234', 'UR231', 'HP001', 'UR088', 'UR200', 'UR008', 'HP033', 
- 'UR151', 'UR217', 'UR246'}</code></pre>
+{'UR238', 'UR008', 'XX231L_UR022', 'UR252', 'UR091', 'UR213', 'UR221', 'UR056A', 
+ 'UR089', 'XX231L_UR246', 'UR235', 'UR059', 'UR243', 'KH0001', 'UR200', 'HP015', 
+ 'UR271', 'UR262', 'UR222', 'HP021', 'UR151', 'HP009', 'XX231L_XX231R', 'UR022', 
+ 'UR116A', 'HP001', 'UR272', 'UR234', 'XX231L_UR089', 'UR240', 'XX231L_UR088', 
+ 'UR228', 'UR231', 'UR246', 'UR217', 'UR201', 'UR056B', 'HP029', 'UR088', 'UR134', 
+ 'HP033', 'HP051 A'}</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>ur231_matches <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">list</span>(<span class="bu">set</span>(z_knot_verso_only_color_banded_khipus).intersection(<span class="bu">set</span>(primary_cord_3mottleds))))</span>
@@ -418,45 +393,21 @@ QU006: ['YB:BB:PB'], QU009: ['YB:BB:PB'],
 </section>
 <section id="ascher-summation-diagrams-for-xx231l_xx246r" class="level3">
 <h3 class="anchored" data-anchor-id="ascher-summation-diagrams-for-xx231l_xx246r">3.2. Ascher Summation Diagrams for XX231L_XX246R</h3>
-<table class="table">
-<caption># Ascher Sums</caption>
-<colgroup>
-<col style="width: 22%">
-<col style="width: 26%">
-<col style="width: 26%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Khipu</th>
-<th style="text-align: right;"># Pendant Pendant Sums<br>&nbsp;</th>
-<th style="text-align: right;"># Pendant Pendant Sums<br> by Color</th>
-<th style="text-align: right;"># Pendant Pendant Sums<br> by Index</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;"><span style="font-size:.7rem;">To see symbolic image,<br> click on Name</span><br><br>&nbsp;</td>
-<td style="text-align: right;"><span style="font-size:.7rem;">To see Ascher Summation Diagram,<br> click on Number</span><br><br>#Total (Left)/(Right)</td>
-<td style="text-align: right;"><span style="font-size:.7rem;">To see Ascher Summation Diagram,<br> click on Number</span><br><br>#Total (Left)/(Right)</td>
-<td style="text-align: right;"><span style="font-size:.7rem;">To see Ascher Summation Diagram,<br> click on Number</span><br><br>#Total (Left)/(Right)</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;"><a href="./images/XX231L_XX231R.jpg">XX231L_XX231R</a></td>
-<td style="text-align: right;">186 <a href="./images/XX231L_XX231R_ppsL.jpg">(89)</a>/<a href="./images/XX231L_XX231R_ppsR.jpg">(97)</a></td>
-<td style="text-align: right;">13 <a href="./images/XX231L_XX231R_ppscL.jpg">(5)</a>/<a href="./images/XX231L_XX231R_ppscR.jpg">(6)</a></td>
-<td style="text-align: right;">12 <a href="./images/XX231L_XX231R_ippsL.jpg">(5)</a>/<a href="./images/XX231L_XX231R_ippsR.jpg">(7)</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;"><a href="./images/XX231L_UR246.jpg">XX231L_UR246</a></td>
-<td style="text-align: right;">96 <a href="./images/XX231L_UR246_ppsL.jpg">(43)</a>/<a href="./images/XX231L_UR246_ppsR.jpg">(53)</a></td>
-<td style="text-align: right;">8 <a href="./images/XX231L_UR246_ppscL.jpg">(2)</a>/<a href="./images/XX231L_UR246_ppscR.jpg">(6)</a></td>
-<td style="text-align: right;">6 <a href="./images/XX231L_UR246_ippsL.jpg">(2)</a>/<a href="./images/XX231L_UR246_ippsR.jpg">(4)</a></td>
-</tr>
-</tbody>
-</table>
-<p>We see that UR231 (UR231A + UR231B) has a great deal more pendant pendant sums, etc, than the spliced khipu XX231L_UR246 (UR231A + UR246). Just how many of these summations cross the broken boundary between the two khipus?</p>
-<div class="cell" data-execution_count="16">
+<p><a href="./images/XX231L_XX231R.jpg">XX231L_XX231R</a> - To see Ascher Summation Diagram, click on Number</p>
+<ul>
+<li>Count of Pendant Pendant Sums - 186 <a href="./images/XX231L_XX231R_ppsL.jpg">(89 left)</a>/<a href="./images/XX231L_XX231R_ppsR.jpg">(97 right)</a></li>
+<li>Count of Pendant Pendant Sums by Color - 13 <a href="./images/XX231L_XX231R_ppscL.jpg">(5 left)</a>/<a href="./images/XX231L_XX231R_ppscR.jpg">(6 right)</a><br>
+</li>
+<li>Count of Pendant Pendant Sums by Index - 12 <a href="./images/XX231L_XX231R_ippsL.jpg">(5 left)</a>/<a href="./images/XX231L_XX231R_ippsR.jpg">(7 right)</a></li>
+</ul>
+<p><a href="./images/XX231L_UR246.jpg">XX231L_UR246</a> - To see Ascher Summation Diagram, click on Number</p>
+<ul>
+<li>Count of Pendant Pendant Sums - 96 <a href="./images/XX231L_UR246_ppsL.jpg">(43 left)</a>/<a href="./images/XX231L_UR246_ppsR.jpg">(53 right)</a></li>
+<li>Count of Pendant Pendant Sums by Color - 8 <a href="./images/XX231L_UR246_ppscL.jpg">(2 left)</a>/<a href="./images/XX231L_UR246_ppscR.jpg">(6 right)</a><br>
+</li>
+<li>Count of Pendant Pendant Sums by Index - 6 <a href="./images/XX231L_UR246_ippsL.jpg">(2 left)</a>/<a href="./images/XX231L_UR246_ippsR.jpg">(4 right)</a></li>
+</ul>
+<div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="cf">for</span> khipu_name <span class="kw">in</span> [<span class="st">'XX231L_XX231R'</span>, <span class="st">'XX231L_UR246'</span>]:</span>
