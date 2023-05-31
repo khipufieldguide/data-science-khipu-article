@@ -46,7 +46,7 @@ The data folder contains:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Source
-Expository source code, excerpted from Khosla's Khipu Field Guide, is provided for the following sections of the article. Each page is an HTML page, created using Jupyter, which shows both explanatory text, and code.
+Expository source code, excerpted from Khosla's Khipu Field Guide, is provided for the following sections of the article. Each page is an HTML page, created using Jupyter and Quarto, which shows both explanatory text, and code.
 
 The following pages have been created, roughly in the order presented in the article:
 
