@@ -214,8 +214,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-13"><a href="#cb3-13"></a></span>
 <span id="cb3-14"><a href="#cb3-14"></a><span class="kw">def</span> num_crossed_relations(aKhipuName, relations_df, left_khipu_num_clusters<span class="op">=</span><span class="dv">39</span>):</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    num_crossings <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a>    khipu_relations_df <span class="op">=</span> relations_df[relations_df.name <span class="op">==</span> aKhipuName]</span>
-<span id="cb3-17"><a href="#cb3-17"></a>    khipu_df <span class="op">=</span> khipu_relations_df.drop_duplicates(subset<span class="op">=</span>[<span class="st">'cord_name'</span>, <span class="st">'handedness'</span>])</span>
+<span id="cb3-16"><a href="#cb3-16"></a>    khipu_df <span class="op">=</span> relations_df[relations_df.name <span class="op">==</span> aKhipuName]</span>
 <span id="cb3-18"><a href="#cb3-18"></a>    relation_reps <span class="op">=</span> []</span>
 <span id="cb3-19"><a href="#cb3-19"></a>    </span>
 <span id="cb3-20"><a href="#cb3-20"></a>    <span class="cf">for</span> index, row <span class="kw">in</span> khipu_df.iterrows():</span>
