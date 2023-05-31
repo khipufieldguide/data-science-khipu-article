@@ -36,12 +36,12 @@ Data are stored in three formats. Khipus are stored as KhipuFieldGuide Excel Spr
 ## Data
 The data folder contains:
 
-* A [**KFG_DB_Excel** Directory](./data/KFG_DB_Excel) of the 650 khipus used in the Khipu Field Guide (KFG) to construct the article. More information on the creation of the KFG database can be viewed at the [KFG Codebook](https://www.khipufieldguide.com/databook/Database_Build.html)
-* A [**KFG_DB_SQL Directory**](./data/KFG_DB.SQL) of the 650 khipus used in the Khipu Field Guide (KFG) to construct the article. More information on the creation of the KFG database can be viewed at the [KFG Codebook](https://www.khipufieldguide.com/databook/Database_Build.html)
-* An [**Ascher Sum Relations** Directory](./data/ascher_sum_relations)  containing Ascher summation relations for all the Ascher summation relations in the 650 khipu, as well as a [summary file](./data/ascher_sum/relations/ascher_sum_relationships.csv).
+* A [**KFG_DB_Excel**](./data/KFG_DB_Excel) Directory of the 650 khipus used in the Khipu Field Guide (KFG) to construct the article. More information on the creation of the KFG database can be viewed at the [KFG Codebook](https://www.khipufieldguide.com/databook/Database_Build.html)
+* A [**KFG_DB_SQL**](./data/KFG_DB.SQL) Directory of the 650 khipus used in the Khipu Field Guide (KFG) to construct the article. More information on the creation of the KFG database can be viewed at the [KFG Codebook](https://www.khipufieldguide.com/databook/Database_Build.html)
+* An [**Ascher Sum Relations**](./data/ascher_sum_relations)  Directory containing Ascher summation relations for all the Ascher summation relations in the 650 khipu, as well as a [summary file](./data/ascher_sum/relations/ascher_sum_relationships.csv).
   These files generally come in pairs (mostly, but not always) - a summary file, showing the number of sums/relations for each khipu, and a more detailed relations file, containing each summation and its location and other useful information.
   More detailed viewing and analyses of these relationships is available at https://www.khipufieldguide.com/notebook/analyses/ascher_sums_overview.html
-* A [**khipu summary**](./data/khipu_summary.csv) CSV file, containing summary information about every khipu in the KFG.
+* A [**Khipu Summary**](./data/khipu_summary.csv) CSV file, containing summary information about every khipu in the KFG.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
