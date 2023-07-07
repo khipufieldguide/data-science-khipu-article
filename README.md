@@ -28,7 +28,7 @@
 </details>
 
 ## About This Repository:
-This repository contains companion data and code for the article ***How Can Data Science Contribute to Understanding the Khipu Code?*** by Manuel Medrano and Ashok Khosla (under review). All of this companion information is presented in more detail and with additional analyses on Khosla's companion website [www.khipufieldguide.com](https://www.khipufieldguide.com/notebook/index.html).
+This repository contains companion data and code for the article ***How Can Data Science Contribute to Understanding the Khipu Code?*** by Manuel Medrano and Ashok Khosla. All of this companion information is presented in more detail and with additional analyses on Khosla's companion website [www.khipufieldguide.com](https://www.khipufieldguide.com/notebook/index.html).
 
 ## Prerequisites
 Data are stored in three formats. Khipus are stored as KhipuFieldGuide Excel Spreadsheets, and as SQL database compatible with the Open Khipu Repository Format. Generated data is stored as CSV (comma-separated values) text files and can be read by Excel, R, Python or any spreadsheet aware software. The SQL file is a SQL "dump" created by the open-source MySQL package MariaDB.
