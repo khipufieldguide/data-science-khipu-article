@@ -70,7 +70,7 @@ The following images are referenced by the article:
   3. [Figure 3 - KH0468 - Fragments VA16135a and VA16135b](./figures/fig03_16135ab.jpg)
   4. [Figure 4 - Sum XRay for KH0468 - Fragments VA16135a and VA16135b](./figures/fig04_xray.jpg)
   5. [Figure 5 - Monte Carlo Simulation of Pendant-Pendant-Sum Handedness](./figures/fig05_mc.jpg)
-  6. [Figure 6 - Violin Plots of Pendant-Pendant=Sums in Reference vs Sample Distributions](./figures/fig06_violins.jpg)
+  6. [Figure 6 - Violin Plots of Pendant-Pendant-Sums in Reference vs Sample Distributions](./figures/fig06_violins.jpg)
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
