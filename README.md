@@ -65,12 +65,12 @@ Images used in the article
 
 The following pages have been created, roughly in the order presented in the article:
 
-  1. [Mean Cord Values vs Number of Sum Relationships](./figures/fig01_highvalues.png)
-  2. [QU019 - Seriated vs Banded Clusters/Groups](./figures/fig02_QU019.tiff)
-  3. [KH0468 - Fragments VA16135a and VA16135b](./figures/fig03_16135ab.tiff)
-  4. [Sum XRay for KH0468 - Fragments VA16135a and VA16135b](./figures/fig_04_xray.tiff)
-  5. [Monte Carlo Simulation of Pendant-Pendant-Sum Handedness](./figures/fig05_mc.jpg)
-  6. [Violin Plots of Pendant-Pendant=Sums in Reference vs Sample Distributions](./figures/fig06_violins.tiff)
+  1. [Mean Cord Values vs Number of Sum Relationships](../figures/fig01_highvalues.png)
+  2. [QU019 - Seriated vs Banded Clusters/Groups](../figures/fig02_QU019.tiff)
+  3. [KH0468 - Fragments VA16135a and VA16135b](../figures/fig03_16135ab.tiff)
+  4. [Sum XRay for KH0468 - Fragments VA16135a and VA16135b](../figures/fig_04_xray.tiff)
+  5. [Monte Carlo Simulation of Pendant-Pendant-Sum Handedness](../figures/fig05_mc.jpg)
+  6. [Violin Plots of Pendant-Pendant=Sums in Reference vs Sample Distributions](../figures/fig06_violins.tiff)
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
