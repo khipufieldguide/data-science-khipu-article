@@ -60,10 +60,10 @@ The following pages have been created, roughly in the order presented in the art
 
   <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Images
-Images used in the article
+## Figures
+Figures used in the article
 
-The following images are referenced by the article:
+The following Figures are referenced by the article:
 
   1. [Figure 1 - Mean Cord Values vs Number of Sum Relationships](./figures/fig01_highvalues.jpg)
   2. [Figure 2 - QU019 - Seriated vs Banded Clusters/Groups](./figures/fig02_QU019.jpg)
