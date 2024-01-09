@@ -9,7 +9,7 @@
     Support Documentation, Data, and Code
   </p>
 
-  <a href="https://doi.org/10.5281/zenodo.8125718"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.8125718.svg" alt="DOI"></a>
+  <a href="https://doi.org/10.5281/zenodo.10472429"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10472429.svg" alt="DOI"></a>
 
 </div>
 
